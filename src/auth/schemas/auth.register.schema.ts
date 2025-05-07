@@ -25,6 +25,12 @@ export class Register {
 
   @Prop({ required: true, enum: TipoUsuario })
   userType: TipoUsuario;
+
+  @Prop()
+  verificationCode: string; 
+
+  @Prop({ default: false })
+  isVerified: boolean;
 }
 
 export const RegisterSchema = SchemaFactory.createForClass(Register);

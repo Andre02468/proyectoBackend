@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { databaseConfig } from './auth/config/databse.config';
+import { EmailModule } from './email/email.module';
 
 
 @Module({
@@ -24,6 +25,7 @@ import { databaseConfig } from './auth/config/databse.config';
       },
     }),
     AuthModule,
+    EmailModule,
   ],
   controllers: [AppController],
   providers: [AppService],
