@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Register, RegisterSchema } from './schemas/auth.register.schema';
 import { Login, LoginSchema } from './schemas/auth.login.shcema';
-
+import { EmailModule } from '../email/email.module';
 
 @Module({
   imports: [
@@ -12,6 +12,7 @@ import { Login, LoginSchema } from './schemas/auth.login.shcema';
       { name: Register.name, schema: RegisterSchema },
       { name: Login.name, schema: LoginSchema },
     ]),
+    EmailModule, 
   ],
   controllers: [AuthController],
   providers: [AuthService],
