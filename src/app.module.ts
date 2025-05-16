@@ -6,7 +6,8 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { databaseConfig } from './auth/config/databse.config';
 import { EmailModule } from './email/email.module';
-
+import { ClienteModule } from './client/client.module'; 
+import { RepartidorModule } from './repartidor/repartidor.module';
 
 @Module({
   imports: [
@@ -26,9 +27,10 @@ import { EmailModule } from './email/email.module';
     }),
     AuthModule,
     EmailModule,
+    ClienteModule,
+    RepartidorModule,  
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-

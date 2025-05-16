@@ -31,6 +31,7 @@ export class Register {
 
   @Prop({ default: false })
   isVerified: boolean;
+  
 }
 
 export const RegisterSchema = SchemaFactory.createForClass(Register);
