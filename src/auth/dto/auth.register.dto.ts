@@ -7,8 +7,6 @@ export enum TipoUsuario {
 }
 
 export class RegisterDto {
-  @IsUUID()
-  readonly id: string;
 
   @IsString()
   readonly name: string;
