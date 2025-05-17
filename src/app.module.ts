@@ -12,6 +12,7 @@ import { ComercianteModule } from './comerciante/comerciante.module';
 import { PedidoModule } from './pedidos/pedidos.module';
 import { ProductoModule } from './producto/producto.module';
 import { RestauranteModule } from './restaurante/restaurante.module';
+import { PagoModule } from './pago/pago.module';
 
 
 @Module({
@@ -37,7 +38,8 @@ import { RestauranteModule } from './restaurante/restaurante.module';
     ComercianteModule,
     PedidoModule,
     ProductoModule,
-    RestauranteModule,  
+    RestauranteModule,
+    PagoModule,  
   ],
   controllers: [AppController],
   providers: [AppService],
