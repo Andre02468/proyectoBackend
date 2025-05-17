@@ -12,8 +12,8 @@ export class ClienteController {
     return this.clienteService.create(createClienteDto);
   }
 
-  /*@Get(':id/historial')
+  @Get(':id/historial')
   getHistorialPedidos(@Param('id') id: string) {
     return this.clienteService.getHistorialPedidos(id);
-  }*/
+  }
 }
