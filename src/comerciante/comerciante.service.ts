@@ -3,13 +3,15 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Comerciante, ComercianteDocument } from './schemas/comerciante.schema';
 import { CreateComercianteDto } from './comerciante.dto';
+import { ProductoService } from 'src/producto/producto.service';
 
 
 @Injectable()
 export class ComercianteService {
   constructor(
-    @InjectModel(Comerciante.name) private readonly comercianteModel: Model<ComercianteDocument>,
-  ) {}
+  private readonly productoService: ProductoService,
+  @InjectModel(Comerciante.name) private comercianteModel: Model<ComercianteDocument>,
+) {}
 
   async create(createDto: CreateComercianteDto): Promise<Comerciante> {
     const nuevo = new this.comercianteModel(createDto);

@@ -10,6 +10,7 @@ import { ClienteModule } from './client/client.module';
 import { RepartidorModule } from './repartidor/repartidor.module';
 import { ComercianteModule } from './comerciante/comerciante.module';
 import { PedidoModule } from './pedidos/pedidos.module';
+import { ProductoModule } from './producto/producto.module';
 
 
 @Module({
@@ -33,7 +34,8 @@ import { PedidoModule } from './pedidos/pedidos.module';
     ClienteModule,
     RepartidorModule,
     ComercianteModule,
-    PedidoModule,  
+    PedidoModule,
+    ProductoModule,  
   ],
   controllers: [AppController],
   providers: [AppService],
