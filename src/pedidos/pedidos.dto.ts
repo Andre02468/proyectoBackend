@@ -23,7 +23,7 @@ export class CreatePedidoDto {
   cliente: string;
 
   @IsMongoId()
-  comerciante: string;
+  restaurante: string;
 
   @IsArray()
   @ValidateNested({ each: true })

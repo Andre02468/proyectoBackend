@@ -24,13 +24,13 @@ export class PedidoService {
         throw new BadRequestException(`El producto "${item.nombre}" no existe.`);
       }
     }
-    
+
     const nuevo = new this.pedidoModel(createDto);
     return nuevo.save();
   }
 
-  async findAll(): Promise<Pedido[]> {
-    return this.pedidoModel.find().populate('cliente comerciante repartidor');
+    async findAll(): Promise<Pedido[]> {
+    return this.pedidoModel.find().populate('cliente restaurante repartidor'); 
   }
 
   async findById(id: string): Promise<Pedido> {

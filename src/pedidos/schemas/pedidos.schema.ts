@@ -19,7 +19,7 @@ export class Pedido {
   @Prop({ type: Types.ObjectId, ref: 'Cliente', required: true })
   cliente: Types.ObjectId;
 
-  @Prop({ type: Types.ObjectId, ref: 'Comerciante', required: true })
+  @Prop({ type: Types.ObjectId, ref: 'Restaurante', required: true })
   comerciante: Types.ObjectId;
 
   @Prop({ type: Types.ObjectId, ref: 'Repartidor', default: null })

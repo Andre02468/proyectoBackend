@@ -11,6 +11,7 @@ import { RepartidorModule } from './repartidor/repartidor.module';
 import { ComercianteModule } from './comerciante/comerciante.module';
 import { PedidoModule } from './pedidos/pedidos.module';
 import { ProductoModule } from './producto/producto.module';
+import { RestauranteModule } from './restaurante/restaurante.module';
 
 
 @Module({
@@ -35,7 +36,8 @@ import { ProductoModule } from './producto/producto.module';
     RepartidorModule,
     ComercianteModule,
     PedidoModule,
-    ProductoModule,  
+    ProductoModule,
+    RestauranteModule,  
   ],
   controllers: [AppController],
   providers: [AppService],
