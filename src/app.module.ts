@@ -9,6 +9,8 @@ import { EmailModule } from './email/email.module';
 import { ClienteModule } from './client/client.module'; 
 import { RepartidorModule } from './repartidor/repartidor.module';
 import { ComercianteModule } from './comerciante/comerciante.module';
+import { PedidoModule } from './pedidos/pedidos.module';
+
 
 @Module({
   imports: [
@@ -30,7 +32,8 @@ import { ComercianteModule } from './comerciante/comerciante.module';
     EmailModule,
     ClienteModule,
     RepartidorModule,
-    ComercianteModule,  
+    ComercianteModule,
+    PedidoModule,  
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import mongoose, { Document, Types } from 'mongoose';
 
 @Schema()
 export class Cliente {
@@ -14,6 +14,9 @@ export class Cliente {
 
   @Prop()
   telefono: string;
+
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Pedido' }], default: [] })
+  historialPedidos: Types.ObjectId[];
 
   // Añade más campos según necesites, sin extender Document aquí
 }
