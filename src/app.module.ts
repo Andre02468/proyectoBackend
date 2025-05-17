@@ -8,6 +8,7 @@ import { databaseConfig } from './auth/config/databse.config';
 import { EmailModule } from './email/email.module';
 import { ClienteModule } from './client/client.module'; 
 import { RepartidorModule } from './repartidor/repartidor.module';
+import { ComercianteModule } from './comerciante/comerciante.module';
 
 @Module({
   imports: [
@@ -28,7 +29,8 @@ import { RepartidorModule } from './repartidor/repartidor.module';
     AuthModule,
     EmailModule,
     ClienteModule,
-    RepartidorModule,  
+    RepartidorModule,
+    ComercianteModule,  
   ],
   controllers: [AppController],
   providers: [AppService],
