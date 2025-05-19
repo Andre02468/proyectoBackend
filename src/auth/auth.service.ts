@@ -23,7 +23,7 @@ export class AuthService {
   ) {}
 
   async register(registerDto: RegisterDto): Promise<any> {
-    const { name, password, email, cellphone, userType } = registerDto;
+    const { name, password, email, cellphone} = registerDto;
 
     if (password.length < 6) {
       return { message: 'La contraseña debe tener al menos 6 caracteres.' };
@@ -37,7 +37,6 @@ export class AuthService {
       password: hashedPassword,
       email,
       cellphone,
-      userType,
       verificationCode,
       isVerified: false,
     });
