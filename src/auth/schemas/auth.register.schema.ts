@@ -3,12 +3,6 @@ import { Document } from 'mongoose';
 
 export type RegisterDocument = Register & Document;
 
-export enum TipoUsuario {
-  CLIENTE = 'cliente',
-  REPARTIDOR = 'repartidor',
-  COMERCIO = 'comercio',
-}
-
 @Schema({ timestamps: true })
 export class Register {
   @Prop({ required: true })
@@ -22,9 +16,6 @@ export class Register {
 
   @Prop({ required: true })
   cellphone: string;
-
-  @Prop({ required: true, enum: TipoUsuario })
-  userType: TipoUsuario;
 
   @Prop()
   verificationCode: string; 
