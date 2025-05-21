@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
+import { Producto } from 'src/comerciante/schemas/comerciante.schema';
 
 @Schema()
 export class Restaurante extends Document {

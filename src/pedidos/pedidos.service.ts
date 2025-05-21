@@ -30,14 +30,15 @@ export class PedidoService {
   }
 
     async findAll(): Promise<Pedido[]> {
-    return this.pedidoModel.find().populate('cliente restaurante repartidor'); 
-  }
+      return this.pedidoModel.find().populate('cliente restaurante repartidor'); 
+    }
 
-  async findById(id: string): Promise<Pedido> {
-    const pedido = await this.pedidoModel.findById(id).populate('cliente comerciante repartidor');
-    if (!pedido) throw new NotFoundException('Pedido no encontrado');
-    return pedido;
-  }
+    async findById(id: string): Promise<Pedido> {
+      const pedido = await this.pedidoModel.findById(id).populate('cliente restaurante repartidor');
+      if (!pedido) throw new NotFoundException('Pedido no encontrado');
+      return pedido;
+    }
+
 
   async asignarRepartidor(pedidoId: string, repartidorId: string): Promise<Pedido> {
     const pedido = await this.pedidoModel.findByIdAndUpdate(
