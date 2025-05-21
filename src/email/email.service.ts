@@ -19,7 +19,7 @@ export class EmailService {
       },
     });
 
-    this.appName = this.configService.get('APP_NAME') || 'Pedidos';
+    this.appName = this.configService.get('APP_NAME') || 'Pedidos Master ';
     this.appUrl = this.configService.get('APP_URL') || 'https://backend-uam.com';
   }
   async sendVerificationEmail(

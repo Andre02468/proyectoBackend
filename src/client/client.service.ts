@@ -6,7 +6,6 @@ import {
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Cliente } from './schemas/client.schema';
-import { Pedido } from 'src/pedidos/schemas/pedidos.schema';
 import * as bcrypt from 'bcrypt';
 import { randomBytes } from 'crypto';
 import { JwtService } from '@nestjs/jwt';
@@ -47,9 +46,6 @@ export class ClienteService {
     return cliente.save();
   }
 
-  // --------------------
-  // 🔐 Registro de cliente
-  // --------------------
   async registerClient(registerDto: RegisterDto) {
     const { name, password, email, cellphone } = registerDto;
 
@@ -82,9 +78,6 @@ export class ClienteService {
     return { message: 'Cliente registrado con éxito. Verifica tu correo electrónico.' };
   }
 
-  // --------------------
-  // 🔐 Login de cliente
-  // --------------------
   async loginClient(loginDto: LoginDto) {
     const { name, password } = loginDto;
     const normalizedInput = this.normalizeName(name);
@@ -103,9 +96,6 @@ export class ClienteService {
     };
   }
 
-  // --------------------
-  // ✅ Verificación de código
-  // --------------------
   async verifyCode(verificationCodeDto: VerificationCodeDto) {
     const { name, code } = verificationCodeDto;
     const normalizedName = this.normalizeName(name);
@@ -124,7 +114,6 @@ export class ClienteService {
     return { message: 'Código verificado correctamente' };
   }
 
-  // Helpers
   private normalizeName(name: string): string {
     return name
       .toLowerCase()
